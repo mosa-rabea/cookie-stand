@@ -104,3 +104,10 @@ body{
     text-align: center;
     font-size: 50px;
  }
+ footer {
+  background: #444444;
+  height: 100px;
+  font-family: 'Open Sans', sans-serif;
+  color: #FFFFFF;
+  padding: 20px;
+}

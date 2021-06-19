@@ -20,9 +20,9 @@ Shops.prototype.randomNumberGenerator = function(){
 Shops.prototype.cookiesSalesgenerator = function(){
 
   for (let i = 0; i < openingHours.length ; i++ ){
-    // alert(this.randomNumberGenerator())
+    
     let avg = Math.ceil((this.cookiesSales * this.randomNumberGenerator()) /14) ;
-    // alert(avg)
+    
     this.cookiesSalesPerHour.push(avg);
     this.TotalPerDay += avg;
 
