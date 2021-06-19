@@ -1,10 +1,28 @@
 body {
   background-color:  bisque;
 }
-
-main img {
+header {
+  background-color: #da7c7ce7;
+  height: 100%;
+  display: flex;
+  align-items: center;
+justify-content: space-between;
+}
+header img {
   width: 200px;
-  height: 200px;
+  background-color:#3d29298f ;
+  padding: 20px;
+  
+}
+header a {
+    
+  text-transform: uppercase;
+  font-size: 25px;
+  font-family: Cambria, Georgia;
+  font-weight: bold;
+  color: #40f777;
+  padding-right: 15;
+  text-decoration: none;
   
 }
 main a:hover {  background-color: lightgreen;
@@ -14,6 +32,73 @@ main a:hover {  background-color: lightgreen;
   text-decoration: none;
    text-align: right;
   
+}
+footer{
+  background-color: #413e2ae5;
+  text-align: left;
+  font-weight: bold;
+  font-size: 15px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color:#201e20; 
+  align-items: center;
+  display: flex;
+  
+}
+  
+body{
+  text-align: center;
+  grid-template-rows: 100px 1fr 50px;
+  background-attachment: fixed; 
+}
+  #address {
+    display: grid;
+    gap: 30px;
+    margin-bottom: 30px;
+    background-color: #474c74e5  ; }
+    
+
+
+
+
+#address ul li{
+    
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    color:#f7e440; 
+    align-items: center;
+    justify-items: center;
+    padding: 10px;
+    border: solid 3px white ;
+    background-color: #b69d9dc4;
+    margin-left: 35%;
+    margin-right: 35%;
+    display: grid;   
+   
+    
+               
+}
+
+#imgs img{
+ 
+    width: 200px ;
+    height: 150px;
+    border-radius: 25px;
+
+}
+
+
+
+
+
+#pp{ text-transform: uppercase;
+  font-size: 25px;
+  font-family: Cambria, Georgia;
+  font-weight: bold;
+  color: #030303;
+  padding-right: 15;
+  text-decoration: none
+
 }
  h1{
     text-align: center;
