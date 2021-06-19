@@ -5,13 +5,13 @@ let shops = [];
 let salesTable = document.getElementById('salesTable');
 let dailytotals = [];
 
-function Shops(location, minCust, maxCust, CookiesSales,TotalPerDay) {
+function Shops(location, minCust, maxCust, CookiesSales) {
   this.location = location;
   this.minCust = minCust;
   this.maxCust = maxCust;
   this.cookiesSales = CookiesSales;
   this.cookiesSalesPerHour = [];
-  this.TotalPerDay = TotalPerDay;
+  this.TotalPerDay = 0;
   shops.push(this);
 }
 Shops.prototype.randomNumberGenerator = function(){
@@ -80,7 +80,7 @@ function renderFooterRow() {
   }
   tableHeadElement = document.createElement('th');
   // tableHeadElement.textContent = dailytotalsSummation();
-  tableHeadElement.textContent = '';
+  tableHeadElement.textContent = dailytotalsSummation();
   tableRowElement.appendChild(tableHeadElement);
   tableFooterElement.appendChild(tableRowElement);
   salesTable.appendChild(tableFooterElement);
@@ -103,12 +103,37 @@ function dailytotalsSummation(){
 }
 
 function calculateAndRenderSalesData(){
+  salesTable.innerHTML = ''
+  renderHeaderRow();
   for(let i in shops) {
     shops[i].cookiesSalesgenerator();
     shops[i].render();
 
   }
+  renderFooterRow();
 }
-renderHeaderRow();
+
 calculateAndRenderSalesData();
-renderFooterRow();
+
+
+
+let newlocform = document.getElementById('addNewLocationForm');
+newlocform.addEventListener('submit',addNewLocation);
+
+function addNewLocation(event){
+  event.preventDefault();
+ 
+  let locname,maxcus,mincus,avrgsales;
+  locname = event.target.lname.value
+  maxcus = event.target.maxCus.value
+  mincus = event.target.minCus.value
+  avrgsales = event.target.avgSales.value
+  
+  new Shops(locname,parseInt(mincus),parseInt(maxcus),parseFloat(avrgsales));
+console.log(Shops)
+
+  
+  calculateAndRenderSalesData();
+
+
+};
